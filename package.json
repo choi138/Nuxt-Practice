@@ -1,34 +1,34 @@
 {
-  "name": "practice",
-  "version": "1.0.0",
+  "name": "nuxt-app",
+  "type": "module",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint:prettier": "prettier --check .",
-    "lint": "yarn lint:js && yarn lint:prettier",
-    "lintfix": "prettier --write --list-different . && yarn lint:js --fix"
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint \"**/*.{js,vue,ts,json}\" --fix --cache",
+    "format": "prettier \"**/*.{js,jsx,ts,tsx,json}\" --write"
   },
   "dependencies": {
-    "core-js": "^3.25.3",
-    "nuxt": "^2.15.8",
-    "vue": "^2.7.10",
-    "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10",
-    "vuetify": "^2.6.10"
+    "nuxt": "^3.12.2",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.19.1",
-    "@nuxtjs/eslint-config": "^11.0.0",
-    "@nuxtjs/eslint-module": "^3.1.0",
-    "@nuxtjs/vuetify": "^1.12.3",
-    "eslint": "^8.24.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-plugin-vue": "^9.5.1",
-    "prettier": "^2.7.1"
+    "@antfu/eslint-config": "^2.21.1",
+    "@eslint/js": "^9.5.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "eslint": "^9.5.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.26.0",
+    "globals": "^15.6.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.4.5",
+    "vue-eslint-parser": "^9.4.3"
   }
 }
