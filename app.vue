@@ -1,24 +1,16 @@
 <script setup lang="ts">
-const count = ref(0)
-
-const increment = () => {
-  count.value++
-}
-
-const decrement = () => {
-  count.value--
+const page = ref('home')
+const view = (name: string) => {
+  page.value = name
 }
 </script>
 
 <template>
   <div>
-    <div>Hello world</div>
-    <button @click="increment">
-      Increment
-    </button>
-    <p>{{ count }}</p>
-    <button @click="decrement">
-      Decrement
-    </button>
+    <!-- <home-welcome /> -->
+    <a href="#" @click="view('home')">Home</a>
+    <a href="#" @click="view('counter')">Counter</a>
+    <LazyHomeWelcome v-if="page === 'home'" />
+    <LazyCounter v-if="page === 'counter'" />
   </div>
 </template>
