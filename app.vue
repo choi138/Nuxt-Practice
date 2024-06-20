@@ -7,12 +7,11 @@ const view = (name: string) => {
 
 <template>
   <div>
-    <a href="#" @click="view('home')">Home</a>
+    <!-- <a href="#" @click="view('home')">Home</a>
     <a href="#" @click="view('counter')">Counter</a>
+    <LazyHomeWelcome v-if="page === 'home'" />
+    <LazyCounter v-if="page === 'counter'" /> -->
 
     <NuxtPage />
-
-    <LazyHomeWelcome v-if="page === 'home'" />
-    <LazyCounter v-if="page === 'counter'" />
   </div>
 </template>

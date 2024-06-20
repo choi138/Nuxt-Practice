@@ -1,5 +1,8 @@
 <template>
   <div>
-    about Page
+    This is about page
+    <NuxtLink to="/">
+      Go to Home Page
+    </NuxtLink>
   </div>
 </template>
