@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav>
+    <nav class="bg-purple-700 text-white border-blue-600">
       <NuxtLink to="/">
         Home
       </NuxtLink>
