@@ -6,11 +6,7 @@ const goToAbout = () => {
 
 <template>
   <div>
-    This is index page
-    <NuxtLink to="/about">
-      Go to About
-    </NuxtLink>
-
+    This is home page
     <button @click="goToAbout">
       Go to About
     </button>

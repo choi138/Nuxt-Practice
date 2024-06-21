@@ -1,11 +1,11 @@
 <script>
 definePageMeta({
-  layout: false,
+  layout: 'sidebar',
 })
 </script>
 
 <template>
   <div>
-    This is about page
+    Welcome Choi138
   </div>
 </template>
