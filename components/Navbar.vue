@@ -16,6 +16,9 @@ const card = useCart()
     <NuxtLink to="/profile">
       Profile
     </NuxtLink>
+    <NuxtLink to="/login">
+      Login
+    </NuxtLink>
     <p>Cart ({{ card.length }})</p>
   </nav>
 </template>

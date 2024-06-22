@@ -1,5 +1,5 @@
 interface CartItem {
-  name: string
+  name: string;
 }
 
-export const useCart = () => useState<CartItem[]>(() => [])
+export const useCart = () => useState<CartItem[]>(() => []);

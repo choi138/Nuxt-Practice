@@ -1,7 +1,7 @@
 export interface IPhoneItem {
-  href: string
-  src: string
-  name: string
+  href: string;
+  src: string;
+  name: string;
 }
 
 export const IPHONES: IPhoneItem[] = [
@@ -25,4 +25,4 @@ export const IPHONES: IPhoneItem[] = [
     src: '/images/iphone-15-pro.webp',
     name: 'Iphone 15 Pro',
   },
-]
+];
