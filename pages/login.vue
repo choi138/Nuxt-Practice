@@ -1,7 +1,10 @@
 <script setup lang="ts">
+const auth = useAuth()
+
 const url = 'https://reqres.in/api/login'
 
 const isLoading = ref(false)
+const _error = ref(null)
 
 const form = reactive({
   email: 'eve.holt@reqres.in',
@@ -19,6 +22,13 @@ const onSubmit = async () => {
   })
 
   isLoading.value = false
+  if (error.value) {
+    _error.value = error.value?.data.error
+    return
+  }
+
+  auth.value.isAuthenticated = true
+  navigateTo('/')
 }
 </script>
 
@@ -38,11 +48,11 @@ const onSubmit = async () => {
               >
             </div>
             <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
-              <!-- <div v-if="_error">
+              <div v-if="_error">
                 <p class="bg-red-500 text-red-200 text-sm p-3 mb-5">
                   {{ _error }}
                 </p>
-              </div> -->
+              </div>
               <form @submit.prevent="onSubmit">
                 <div class="mb-6">
                   <input
