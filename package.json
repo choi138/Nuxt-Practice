@@ -9,7 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint \"**/*.{js,vue,ts,json}\" --fix --cache",
-    "format": "prettier \"**/*.{js,jsx,ts,tsx,json}\" --write"
+    "format": "prettier \"**/*.{js,vue,ts,json}\" --write"
   },
   "dependencies": {
     "nuxt": "^3.12.2",

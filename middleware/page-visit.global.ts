@@ -1,4 +1,4 @@
 export default defineNuxtRouteMiddleware(() => {
-  const pageVisitCount = usePageVisitCount()
-  pageVisitCount.value++
-})
+  const pageVisitCount = usePageVisitCount();
+  pageVisitCount.value++;
+});

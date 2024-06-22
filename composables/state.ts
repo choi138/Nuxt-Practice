@@ -1,13 +1,13 @@
 interface CartState {
-  name: string
+  name: string;
 }
 
-export const useCart = () => useState<CartState[]>(() => [])
+export const useCart = () => useState<CartState[]>(() => []);
 
 export interface AuthState {
-  isAuthenticated: boolean
+  isAuthenticated: boolean;
 }
 
-export const useAuth = () => useState<AuthState>(() => ({ isAuthenticated: false }))
+export const useAuth = () => useState<AuthState>(() => ({ isAuthenticated: false }));
 
-export const usePageVisitCount = () => useState<number>(() => 0)
+export const usePageVisitCount = () => useState<number>(() => 0);

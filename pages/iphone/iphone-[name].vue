@@ -1,39 +1,38 @@
 <script setup lang="ts">
-const cart = useCart()
-const route = useRoute()
+const cart = useCart();
+const route = useRoute();
 
-const paramName = route.params.name
+const paramName = route.params.name;
 
 const name = computed(() => {
   if (typeof paramName === 'string') {
-    return paramName.replaceAll('-', ' ')
+    return paramName.replaceAll('-', ' ');
   }
   if (Array.isArray(paramName)) {
-    return paramName.map(name => name.replaceAll('-', ' '))
+    return paramName.map((name) => name.replaceAll('-', ' '));
   }
-  return ''
-})
+  return '';
+});
 
 const fullName = computed(() => {
-  return `Iphone-${paramName}`
-})
+  return `Iphone-${paramName}`;
+});
 
 const isInCart = computed(() => {
   // === = find
   // !== = every
-  return !!cart.value.find(item => item.name === fullName.value)
-})
+  return !!cart.value.find((item) => item.name === fullName.value);
+});
 
 const addToCart = () => {
   if (!isInCart.value) {
     cart.value.push({
       name: fullName.value,
-    })
+    });
+  } else {
+    cart.value = cart.value.filter((item) => item.name !== fullName.value);
   }
-  else {
-    cart.value = cart.value.filter(item => item.name !== fullName.value)
-  }
-}
+};
 </script>
 
 <template>
@@ -44,19 +43,13 @@ const addToCart = () => {
     <div class="flex justify-center w-full mt-20">
       <div class="grid grid-cols-2">
         <div>
-          <img :src="`/images/iphone-${paramName}.webp`" alt="">
+          <img :src="`/images/iphone-${paramName}.webp`" alt="" />
         </div>
         <div class="text-center">
-          <h1 class="text-3xl">
-            Iphone {{ name }}
-          </h1>
+          <h1 class="text-3xl">Iphone {{ name }}</h1>
           <button class="p-3 bg-indigo-900 text-white rounded-md mt-5 w-48" @click="addToCart">
-            <span v-if="isInCart">
-              remove from cart
-            </span>
-            <span v-else>
-              Buy Now
-            </span>
+            <span v-if="isInCart"> remove from cart </span>
+            <span v-else> Buy Now </span>
           </button>
         </div>
       </div>

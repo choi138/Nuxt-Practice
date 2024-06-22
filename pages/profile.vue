@@ -2,11 +2,9 @@
 definePageMeta({
   layout: 'sidebar',
   middleware: ['auth'],
-})
+});
 </script>
 
 <template>
-  <div>
-    Welcome Choi138
-  </div>
+  <div>Welcome Choi138</div>
 </template>

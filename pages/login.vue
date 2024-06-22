@@ -1,35 +1,34 @@
 <script setup lang="ts">
-const auth = useAuth()
+const auth = useAuth();
 
-const url = 'https://reqres.in/api/login'
+const url = 'https://reqres.in/api/login';
 
-const isLoading = ref(false)
-const _error = ref(null)
+const isLoading = ref(false);
+const _error = ref(null);
 
 const form = reactive({
   email: 'eve.holt@reqres.in',
   password: 'cityslicka',
-})
+});
 
 const onSubmit = async () => {
-  if (isLoading.value)
-    return
+  if (isLoading.value) return;
 
-  isLoading.value = true
+  isLoading.value = true;
   const { data, error } = await useFetch(url, {
     method: 'post',
     body: form,
-  })
+  });
 
-  isLoading.value = false
+  isLoading.value = false;
   if (error.value) {
-    _error.value = error.value?.data.error
-    return
+    _error.value = error.value?.data.error;
+    return;
   }
 
-  auth.value.isAuthenticated = true
-  navigateTo('/')
-}
+  auth.value.isAuthenticated = true;
+  navigateTo('/');
+};
 </script>
 
 <template>
@@ -37,15 +36,13 @@ const onSubmit = async () => {
     <div class="m-auto">
       <section class="h-screen">
         <div class="container px-6 py-12 h-full">
-          <div
-            class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800"
-          >
+          <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
             <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
               <img
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
                 class="w-full"
                 alt="Phone image"
-              >
+              />
             </div>
             <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
               <div v-if="_error">
@@ -60,7 +57,7 @@ const onSubmit = async () => {
                     type="text"
                     class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     placeholder="Email address"
-                  >
+                  />
                 </div>
                 <div class="mb-6">
                   <input
@@ -68,7 +65,7 @@ const onSubmit = async () => {
                     type="password"
                     class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     placeholder="Password"
-                  >
+                  />
                 </div>
                 <button
                   type="submit"
