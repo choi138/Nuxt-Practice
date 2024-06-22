@@ -9,3 +9,5 @@ export interface AuthState {
 }
 
 export const useAuth = () => useState<AuthState>(() => ({ isAuthenticated: false }))
+
+export const usePageVisitCount = () => useState<number>(() => 0)

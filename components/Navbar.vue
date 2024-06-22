@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const card = useCart()
 const auth = useAuth()
+const pageVisited = usePageVisitCount()
 
 const logout = () => {
   auth.value.isAuthenticated = false
@@ -17,6 +18,7 @@ const logout = () => {
         Iphones
       </NuxtLink>
       <p>Cart ({{ card.length }})</p>
+      <p>Total Page Route Change: ({{ pageVisited }})</p>
     </div>
     <div v-if="auth.isAuthenticated">
       <NuxtLink to="/profile">
