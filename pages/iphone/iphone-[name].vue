@@ -1,7 +1,16 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const name = computed(() => route.params.name.replaceAll('-', ' '))
+const name = computed(() => {
+  const paramName = route.params.name
+  if (typeof paramName === 'string') {
+    return paramName.replaceAll('-', ' ')
+  }
+  if (Array.isArray(paramName)) {
+    return paramName.map(name => name.replaceAll('-', ' '))
+  }
+  return ''
+})
 </script>
 
 <template>
